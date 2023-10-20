@@ -14,14 +14,18 @@ header {
   padding: 10px;
 }
 
-nav {
+.navMenu {
   display: none;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 20px;
+.hamburger {
+  margin: 15px;
+  color: white;
+  font-size: 30px;
+}
+
+.hamburger:hover {
+  color: #506265;
 }
 
 main {
@@ -36,6 +40,26 @@ main {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0px 0px 0px #728c91;
+  }
+
+  to {
+    box-shadow: 0px 0px 30px #728c91;
+  }
+}
+
+.button:hover {
+  background-color: #506265;
+  transform: rotate(180deg);
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 0.5s;
 }
 
 .container {
@@ -64,6 +88,10 @@ main {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 0.5s;
 }
 
 .section1 h2 {
@@ -97,10 +125,24 @@ footer {
 }
 
 @media (min-width: 768px) {
-  nav {
+  .navMenu {
     display: flex;
     text-align: center;
     padding: 10px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+  }
+
+  nav a:hover {
+    color: #506265;
+  }
+
+  .hamburger {
+    display: none;
   }
 
   .container {
